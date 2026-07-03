@@ -1,0 +1,130 @@
+/* ===== SnapSpy Premium Theme ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#090909;
+color:#fff;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,0,0,.2);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+color:#ff1e1e;
+letter-spacing:2px;
+text-shadow:0 0 20px red;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff1e1e;
+}
+
+.hero{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#cfcfcf;
+max-width:650px;
+margin-bottom:30px;
+}
+
+.search-box{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.search-box input{
+width:320px;
+padding:16px;
+border:none;
+border-radius:12px;
+background:#1b1b1b;
+color:#fff;
+outline:none;
+}
+
+.search-box button{
+padding:16px 28px;
+background:#ff1e1e;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.search-box button:hover{
+background:#d40000;
+transform:translateY(-2px);
+}
+
+.ad-box{
+max-width:900px;
+margin:50px auto;
+padding:30px;
+border:2px dashed #444;
+text-align:center;
+border-radius:12px;
+color:#999;
+}
+
+footer{
+padding:40px;
+text-align:center;
+border-top:1px solid #222;
+}
+
+footer a{
+color:#bbb;
+margin:0 10px;
+text-decoration:none;
+}
+
+footer a:hover{
+color:#ff1e1e;
+}
+
+.small{
+margin-top:15px;
+font-size:13px;
+color:#888;
+}
