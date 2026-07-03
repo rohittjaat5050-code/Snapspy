@@ -1,33 +1,66 @@
-window.addEventListener("load",()=>{
-
-setTimeout(()=>{
-
-document.getElementById("loader").style.display="none";
-
-},2200);
-
+// ===== Loader =====
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 500);
+    }, 1200);
+  }
 });
 
-const btn=document.getElementById("generateBtn");
+// ===== Typing Terminal =====
+const terminal = document.getElementById("terminal");
 
-if(btn){
+const lines = [
+  "> Initializing SnapSpy...",
+  "> Loading Cyber UI...",
+  "> Establishing secure session...",
+  "> AI modules ready.",
+  "> Dashboard online."
+];
 
-btn.onclick=function(){
+if (terminal) {
+  let line = 0;
+  let char = 0;
 
-const username=document.getElementById("username").value.trim();
+  function type() {
+    if (line >= lines.length) return;
 
-if(username==""){
+    if (char < lines[line].length) {
+      terminal.textContent += lines[line].charAt(char);
+      char++;
+      setTimeout(type, 35);
+    } else {
+      terminal.textContent += "\n";
+      line++;
+      char = 0;
+      setTimeout(type, 250);
+    }
+  }
 
-alert("Please enter a username.");
-
-return;
-
+  type();
 }
 
-localStorage.setItem("snapspy_username",username);
+// ===== Hero Button =====
+const btn = document.querySelector(".search button");
 
-window.location="report.html";
+if (btn) {
+  btn.addEventListener("click", () => {
+    const input = document.querySelector(".search input");
 
-}
+    if (!input.value.trim()) {
+      alert("Please enter a username.");
+      return;
+    }
 
+    localStorage.setItem("snapspy_username", input.value.trim());
+
+    btn.textContent = "Opening...";
+    btn.disabled = true;
+
+    setTimeout(() => {
+      window.location.href = "report.html";
+    }, 1000);
+  });
 }
