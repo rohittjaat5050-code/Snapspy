@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnapSpy Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>SnapSpy Report</h1>
+
+<div class="ad-box">
+
+<h2 id="username">@username</h2>
+
+<p><strong>Activity Score:</strong> 91%</p>
+
+<p><strong>Popularity:</strong> High</p>
+
+<p><strong>Engagement:</strong> Active</p>
+
+<p><strong>Status:</strong> Public Profile</p>
+
+<p style="margin-top:20px;color:#999;">
+This is a simulated report for entertainment purposes only.
+</p>
+
+<br>
+
+<a href="index.html">
+<button>Analyze Another Username</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("username").innerText =
+"@" + (localStorage.getItem("username") || "unknown");
+</script>
+
+</body>
+</html>
