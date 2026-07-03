@@ -1,14 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load",()=>{
 
-const button = document.querySelector("button");
+setTimeout(()=>{
 
-const input = document.querySelector("input");
+document.getElementById("loader").style.display="none";
 
-button.addEventListener("click", () => {
+},2200);
 
-const username = input.value.trim();
+});
 
-if(username === ""){
+const btn=document.getElementById("generateBtn");
+
+if(btn){
+
+btn.onclick=function(){
+
+const username=document.getElementById("username").value.trim();
+
+if(username==""){
 
 alert("Please enter a username.");
 
@@ -16,10 +24,10 @@ return;
 
 }
 
-localStorage.setItem("username", username);
+localStorage.setItem("snapspy_username",username);
 
-window.location.href = "report.html";
+window.location="report.html";
 
-});
+}
 
-});
+}
