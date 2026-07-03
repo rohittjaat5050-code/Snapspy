@@ -138,31 +138,43 @@ gap:15px;
 
 .logo-circle{
 
-width:65px;
-
-height:65px;
+width:80px;
+height:80px;
 
 border-radius:50%;
 
-background:#111;
-
-border:2px solid red;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
-font-size:30px;
+background:rgba(255,0,0,.08);
+
+border:2px solid #ff2020;
 
 box-shadow:
+0 0 15px #ff2020,
+0 0 40px rgba(255,0,0,.4);
 
-0 0 20px red,
+animation:logoPulse 2.5s infinite;
 
-0 0 50px #ff000050;
+}
 
-animation:pulse 2s infinite;
+@keyframes logoPulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+box-shadow:
+0 0 25px #ff2020,
+0 0 70px rgba(255,0,0,.7);
+}
+
+100%{
+transform:scale(1);
+}
 
 }
 
