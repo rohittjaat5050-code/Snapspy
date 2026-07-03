@@ -3,15 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SnapSpy - User Report</title>
+
+<title>SnapSpy</title>
 
 <link rel="stylesheet" href="css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+
+<div id="loader">
+<div class="loader-logo">SNAPSPY</div>
+<div class="loader-bar">
+<div class="loader-progress"></div>
+</div>
+</div>
 
 <header>
 
@@ -22,8 +31,11 @@ SNAPSPY
 <nav>
 
 <a href="#">Home</a>
+
 <a href="#">About</a>
+
 <a href="#">FAQ</a>
+
 <a href="#">Contact</a>
 
 </nav>
@@ -32,19 +44,22 @@ SNAPSPY
 
 <section class="hero">
 
-<h1>Analyze Any Username</h1>
+<div class="glass">
+
+<h1>
+Analyze Any Username
+</h1>
 
 <p>
-Generate a simulated report for entertainment purposes.
+Generate a simulated report for entertainment purposes only.
 </p>
-
-<div class="search-box">
 
 <input
 type="text"
+id="username"
 placeholder="Enter Username">
 
-<button>
+<button id="generateBtn">
 
 Generate Report
 
@@ -54,33 +69,11 @@ Generate Report
 
 </section>
 
-<section class="ad-box">
-
-Advertisement
-
-</section>
-
 <footer>
-
-<div>
-
-<a href="#">Privacy</a>
-
-<a href="#">Terms</a>
-
-<a href="#">Disclaimer</a>
-
-</div>
 
 <p>
 
 © 2026 SnapSpy.me
-
-</p>
-
-<p class="small">
-
-SnapSpy generates simulated reports for entertainment purposes only. It does not access real chats, stories, or private account data.
 
 </p>
 
