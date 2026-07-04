@@ -1,128 +1,111 @@
-// ==========================
-// SNAPSPY V5
-// ==========================
+// ===============================
+// SNAPSPY V6
+// UI DEMO ONLY
+// ===============================
 
 // Matrix Background
-const canvas = document.getElementById("matrix");
+const matrix = document.getElementById("matrix");
 
-if (canvas) {
-  const ctx = canvas.getContext("2d");
+if (matrix) {
 
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
+    for (let i = 0; i < 120; i++) {
 
-  resize();
-  window.addEventListener("resize", resize);
+        const s = document.createElement("span");
 
-  const chars = "01SNAPSPYABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const size = 16;
-  let columns = Math.floor(window.innerWidth / size);
-  let drops = Array(columns).fill(1);
+        s.innerHTML = Math.random() > .5 ? "1" : "0";
 
-  function draw() {
-    ctx.fillStyle = "rgba(0,0,0,0.08)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+        s.style.left = Math.random() * 100 + "%";
 
-    ctx.fillStyle = "#ff2020";
-    ctx.font = size + "px monospace";
+        s.style.animationDuration = 4 + Math.random() * 8 + "s";
 
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars[Math.floor(Math.random() * chars.length)];
+        s.style.animationDelay = Math.random() * 5 + "s";
 
-      ctx.fillText(text, i * size, drops[i] * size);
+        matrix.appendChild(s);
 
-      if (drops[i] * size > canvas.height && Math.random() > 0.98) {
-        drops[i] = 0;
-      }
-
-      drops[i]++;
     }
-  }
 
-  setInterval(draw, 35);
 }
 
-// ==========================
 // Terminal Typing
-// ==========================
 
-const terminal = document.getElementById("terminal");
-
-if (terminal) {
+const terminal = document.getElementById("terminalText");
 
 const lines = [
 
-"> Booting SnapSpy...",
-"> Loading Security Modules...",
-"> Starting AI Engine...",
-"> Encrypting Session...",
-"> Demo Dashboard Ready."
+"> Initializing SnapSpy Demo...",
+"> Connecting UI Modules...",
+"> Loading AI Components...",
+"> Verifying Dashboard...",
+"> Security Layer Active...",
+"> Demo Ready."
 
 ];
 
-let line = 0;
-let ch = 0;
+let i = 0;
 
-function type(){
+function typeLine(){
 
-if(line >= lines.length){
+if(!terminal) return;
+
+if(i < lines.length){
+
+terminal.innerHTML += lines[i] + "\n";
+
+terminal.scrollTop = terminal.scrollHeight;
+
+i++;
+
+setTimeout(typeLine,700);
+
+}else{
 
 setTimeout(()=>{
 
 terminal.innerHTML="";
 
-line=0;
-ch=0;
+i=0;
 
-type();
+typeLine();
 
-},2500);
-
-return;
-
-}
-
-if(ch < lines[line].length){
-
-terminal.innerHTML += lines[line].charAt(ch);
-
-ch++;
-
-setTimeout(type,35);
-
-}else{
-
-terminal.innerHTML+="<br>";
-
-line++;
-
-ch=0;
-
-setTimeout(type,250);
+},3000);
 
 }
 
 }
 
-type();
+typeLine();
 
-}
 
-// ==========================
-// Button
-// ==========================
+// Progress Animation
 
-const btn = document.querySelector(".search button");
+const percent = document.getElementById("percent");
 
-if(btn){
+const bar = document.getElementById("bar");
 
-btn.addEventListener("click",()=>{
+let value = 87;
 
-const input=document.querySelector(".search input");
+setInterval(()=>{
 
-if(!input.value.trim()){
+value++;
+
+if(value>99) value=87;
+
+if(percent) percent.innerHTML=value+"%";
+
+if(bar) bar.style.width=value+"%";
+
+},180);
+
+
+// Analyze Button (Demo)
+
+const btn = document.getElementById("analyze");
+
+btn?.addEventListener("click",()=>{
+
+const user=document.getElementById("username");
+
+if(!user.value.trim()){
 
 alert("Please enter a username.");
 
@@ -130,8 +113,29 @@ return;
 
 }
 
-alert("Demo mode: Analysis UI loaded for " + input.value);
+alert(
+"Demo Mode\n\nUsername: "
++ user.value +
+"\n\nThis is a cyber dashboard demonstration."
+);
 
 });
 
-}
+
+// Card Hover Glow
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.addEventListener("mousemove",()=>{
+
+card.style.boxShadow="0 0 30px rgba(255,0,0,.45)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.boxShadow="0 0 15px rgba(255,0,0,.15)";
+
+});
+
+});
