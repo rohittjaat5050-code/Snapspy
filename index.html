@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SnapSpy | Cyber Dashboard</title>
+<title>SnapSpy | Cyber Security Dashboard</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
@@ -22,140 +23,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <canvas id="matrix"></canvas>
 
-<div class="overlay"></div>
-
 <header>
 
 <div class="logo">
 
 <div class="logo-circle">
 
-<img src="logo.png" alt="SnapSpy">
+🛡️
 
 </div>
 
 <div>
 
-<h1>SNAP<span>SPY</span></h1>
-
-<p>UNLOCK THE TRUTH</p>
-
-</div>
-
-</div>
-
-<nav>
-
-<a href="#">HOME</a>
-
-<a href="#">ABOUT</a>
-
-<a href="#">FEATURES</a>
-
-<a href="#">FAQ</a>
-
-<a href="#">CONTACT</a>
-
-</nav>
-
-<a class="dashboard-btn" href="#">Dashboard</a>
-
-</header>
-
-<section class="hero">
-
-<div class="left-panel">
-
-<div class="box">
-
-<h3><i class="fa-solid fa-circle"></i> SYSTEM STATUS</h3>
-
-<ul>
-
-<li>> Connecting...</li>
-
-<li>> Loading Database...</li>
-
-<li>> Encrypting...</li>
-
-<li>> Success</li>
-
-</ul>
-
-<div class="progress">
-
-<div class="fill"></div>
-
-</div>
-
-</div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>SnapSpy | Cyber Dashboard</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-<canvas id="matrix"></canvas>
-<div class="matrix"></div>
-<div class="overlay"></div>
-
-<header>
-
-<div class="logo">
-
-<div class="logo-circle">
-
-<svg width="58" height="58" viewBox="0 0 100 100">
-
-<defs>
-
-<linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-
-<stop offset="0%" stop-color="#ff0000"/>
-
-<stop offset="100%" stop-color="#ff4d4d"/>
-
-</linearGradient>
-
-</defs>
-
-<circle cx="50" cy="50" r="42"
-fill="none"
-stroke="url(#redGlow)"
-stroke-width="4"/>
-
-<path
-d="M50 20
-L72 32
-L72 52
-C72 68 61 80 50 86
-C39 80 28 68 28 52
-L28 32 Z"
-fill="url(#redGlow)"/>
-
-<circle cx="50" cy="47"
-r="8"
-fill="#111"/>
-
-</svg>
-
-</div>
-
-<div>
-
-<h2>SNAPSPY</h2>
+<h2>SNAP<span>SPY</span></h2>
 
 <p>CYBER SECURITY DEMO</p>
 
@@ -166,11 +46,9 @@ fill="#111"/>
 <nav>
 
 <a href="#">Home</a>
-
 <a href="#">Features</a>
-
 <a href="#">About</a>
-
+<a href="#">FAQ</a>
 <a href="#">Contact</a>
 
 </nav>
@@ -179,18 +57,42 @@ fill="#111"/>
 
 <section class="hero">
 
-<div class="glow-circle"></div>
+<div class="hero-left">
 
-<h1>
+<div class="card">
 
-<span>SNAP</span><span class="red">SPY</span>
+<h3>System Status</h3>
 
-</h1>
+<p>✔ Secure Connection</p>
+
+<p>✔ AI Engine Online</p>
+
+<p>✔ Demo Dashboard Ready</p>
+
+<div class="progress">
+
+<div class="fill"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Live Terminal</h3>
+
+<div id="terminal"></div>
+
+</div>
+
+</div>
+
+<div class="hero-center">
+
+<h1>SNAP<span>SPY</span></h1>
 
 <p>
-
-Cyber Security Demonstration Interface
-
+Modern Cyber Security Dashboard Demo
 </p>
 
 <div class="search">
@@ -201,7 +103,7 @@ placeholder="Enter Username">
 
 <button>
 
-Analyze
+Analyze Demo
 
 </button>
 
@@ -209,59 +111,36 @@ Analyze
 
 <div class="badges">
 
-<div>🔒 Secure</div>
+<div>Secure</div>
 
-<div>⚡ Fast</div>
+<div>AI</div>
 
-<div>🤖 AI</div>
+<div>Fast</div>
 
-<div>🛡️ Privacy</div>
+<div>Privacy</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="card">
+
+<h3>Threat Monitor</h3>
+
+<p>No active alerts.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Security Score</h3>
+
+<h2>98%</h2>
+
+</div>
 
 </div>
 
 </section>
-
-<section class="cards">
-
-<div class="card">
-
-<h3>System Status</h3>
-
-<p>Connected</p>
-
-<div class="progress">
-
-<div class="fill"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>AI Scanner</h3>
-
-<p>Ready</p>
-
-<div class="progress">
-
-<div class="fill"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Terminal</h3>
-
-<pre id="terminal"></pre>
-
-</div>
-
-</section>
-
-<script src="js/app.js"></script>
-
-</body>
-</html>
