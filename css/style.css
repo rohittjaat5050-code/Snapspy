@@ -141,3 +141,212 @@ nav a:hover{
     280px;
     gap:30px;
 }
+/*=========================
+  HERO CONTENT
+=========================*/
+
+.hero-left,
+.hero-center,
+.hero-right{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,0,0,.20);
+
+border-radius:20px;
+
+backdrop-filter:blur(20px);
+
+padding:25px;
+
+box-shadow:0 0 25px rgba(255,0,0,.10);
+
+}
+
+.hero-center{
+
+text-align:center;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.hero-center h1{
+
+font-size:70px;
+
+font-weight:900;
+
+letter-spacing:5px;
+
+margin-bottom:15px;
+
+text-shadow:0 0 20px red;
+
+}
+
+.hero-center h1 span{
+
+color:#ff2020;
+
+}
+
+.hero-center p{
+
+color:#bdbdbd;
+
+font-size:18px;
+
+margin-bottom:35px;
+
+max-width:600px;
+
+line-height:30px;
+
+}
+
+.search{
+
+display:flex;
+
+gap:15px;
+
+width:100%;
+
+justify-content:center;
+
+margin-top:20px;
+
+flex-wrap:wrap;
+
+}
+
+.search input{
+
+width:360px;
+
+padding:18px;
+
+background:#111;
+
+border:1px solid rgba(255,0,0,.3);
+
+border-radius:12px;
+
+outline:none;
+
+color:white;
+
+font-size:16px;
+
+}
+
+.search input:focus{
+
+border-color:#ff2020;
+
+box-shadow:0 0 20px rgba(255,0,0,.4);
+
+}
+
+.search button{
+
+padding:18px 35px;
+
+background:#ff2020;
+
+border:none;
+
+border-radius:12px;
+
+font-size:17px;
+
+font-weight:bold;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.search button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 25px red;
+
+}
+
+.badges{
+
+display:flex;
+
+gap:15px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.badges div{
+
+padding:12px 18px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,0,0,.20);
+
+font-size:14px;
+
+font-weight:bold;
+
+}
+
+.glow-circle{
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:rgba(255,0,0,.12);
+
+filter:blur(120px);
+
+z-index:-1;
+
+animation:glowMove 8s infinite alternate;
+
+}
+
+@keyframes glowMove{
+
+0%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(30px);
+
+}
+
+}
