@@ -480,3 +480,134 @@ padding:40px 20px;
 }
 
 }
+/* ==========================
+   FINAL EFFECTS
+========================== */
+
+button,
+.search button{
+transition:.35s ease;
+}
+
+button:hover,
+.search button:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:
+0 0 15px #ff2020,
+0 0 35px rgba(255,0,0,.45);
+}
+
+.logo-circle{
+animation:logoPulse 2.5s infinite;
+}
+
+@keyframes logoPulse{
+
+0%{
+transform:scale(1);
+box-shadow:0 0 15px #ff2020;
+}
+
+50%{
+transform:scale(1.08);
+box-shadow:
+0 0 25px #ff2020,
+0 0 60px rgba(255,0,0,.7);
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 0 15px #ff2020;
+}
+
+}
+
+.card{
+animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff2020;
+border-radius:30px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+.hero{
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,0,0,.08);
+filter:blur(120px);
+border-radius:50%;
+top:-150px;
+right:-150px;
+animation:heroGlow 8s infinite alternate;
+z-index:-1;
+}
+
+@keyframes heroGlow{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-120px,120px);
+}
+
+}
+
+footer p{
+letter-spacing:2px;
+font-size:14px;
+color:#999;
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:15px;
+line-height:24px;
+}
+
+.logo h2{
+font-size:22px;
+}
+
+.logo-circle{
+width:60px;
+height:60px;
+}
+
+}
