@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SnapSpy | Cyber Security Dashboard</title>
-
-<link rel="stylesheet" href="css/style.css">
+<title>SnapSpy | Cyber Security Demo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://kit.fontawesome.com/6f4b692c5d.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
+<div id="matrix"></div>
+<div class="overlay"></div>
 
 <header>
 
@@ -29,13 +29,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <div class="logo-circle">
 
-🛡️
+<i class="fa-solid fa-shield-halved"></i>
 
 </div>
 
 <div>
 
-<h2>SNAP<span>SPY</span></h2>
+<h1>SNAP<span>SPY</span></h1>
 
 <p>CYBER SECURITY DEMO</p>
 
@@ -43,150 +43,117 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </div>
 
-<nav>
+<div class="menu">
 
-<a href="#">Home</a>
-<a href="#">Features</a>
-<a href="#">About</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
+<i class="fa-solid fa-bars"></i>
 
-</nav>
+</div>
 
 </header>
 
+<nav>
+
+<a class="active">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a>
+
+<i class="fa-regular fa-star"></i>
+
+Features
+
+</a>
+
+<a>
+
+<i class="fa-solid fa-circle-info"></i>
+
+About
+
+</a>
+
+<a>
+
+<i class="fa-regular fa-envelope"></i>
+
+Contact
+
+</a>
+
+</nav>
+
 <section class="hero">
 
-<div class="hero-left">
+<h2>
 
-<div class="card">
+SNAP<span>SPY</span>
 
-<h3>System Status</h3>
+</h2>
 
-<p>✔ Secure Connection</p>
-
-<p>✔ AI Engine Online</p>
-
-<p>✔ Demo Dashboard Ready</p>
-
-<div class="progress">
-
-<div class="fill"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Live Terminal</h3>
-
-<div id="terminal"></div>
-
-</div>
-
-</div>
-
-<div class="hero-center">
-
-<h1>SNAP<span>SPY</span></h1>
+<div class="hero-line"></div>
 
 <p>
-Modern Cyber Security Dashboard Demo
+
+CYBER DEMONSTRATION
+
 </p>
 
-<div class="search">
+<div class="search-box">
+
+<div class="input">
+
+<i class="fa-solid fa-user"></i>
 
 <input
 type="text"
-placeholder="Enter Username">
+placeholder="Enter Username"
+id="username">
 
-<button>
+</div>
 
-Analyze Demo
+<div class="secure">
+
+<i class="fa-solid fa-lock"></i>
+
+SECURE
+
+</div>
+
+</div>
+
+<button id="analyze">
+
+<i class="fa-solid fa-crosshairs"></i>
+
+ANALYZE
 
 </button>
 
-</div>
-
-<div class="badges">
-
-<div>Secure</div>
-
-<div>AI</div>
-
-<div>Fast</div>
-
-<div>Privacy</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="card">
-
-<h3>Threat Monitor</h3>
-
-<p>No active alerts.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Security Score</h3>
-
-<h2>98%</h2>
-
-</div>
-
-</div>
-
 </section>
+
 <section class="features">
 
 <div class="card">
+
 <i class="fa-solid fa-shield-halved"></i>
-<h3>Cyber Security</h3>
-<p>Modern dashboard with secure UI and cyber-inspired visuals.</p>
+
+<h3>SECURITY</h3>
+
+<p>Advanced protection</p>
+
 </div>
 
 <div class="card">
-<i class="fa-solid fa-microchip"></i>
-<h3>AI Insights</h3>
-<p>Interactive demo panels and animated status indicators.</p>
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI POWERED</h3>
+
+<p>Smart AI scanning</p>
+
 </div>
-
-<div class="card">
-<i class="fa-solid fa-chart-line"></i>
-<h3>Analytics</h3>
-<p>Beautiful charts, cards, and progress indicators for demonstration.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-user-shield"></i>
-<h3>Privacy</h3>
-<p>Privacy-focused design with a professional cyber theme.</p>
-</div>
-
-</section>
-
-<footer>
-
-<h2>SNAP<span>SPY</span></h2>
-
-<p>
-Cyber Security Dashboard Demo
-</p>
-
-<p>
-© 2026 SnapSpy. All Rights Reserved.
-</p>
-
-</footer>
-
-<script src="js/app.js"></script>
-
-</body>
-</html>
