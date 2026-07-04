@@ -2,26 +2,35 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SnapSpy | Cyber Security Demo</title>
+<title>SnapSpy V7 | Cyber Security Dashboard</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
-<script src="https://kit.fontawesome.com/6f4b692c5d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<div id="matrix"></div>
+<!-- Matrix Background -->
+
+<canvas id="matrix"></canvas>
+
 <div class="overlay"></div>
+
+<!-- Header -->
 
 <header>
 
@@ -35,13 +44,27 @@
 
 <div>
 
-<h1>SNAP<span>SPY</span></h1>
+<h2>SNAP<span>SPY</span></h2>
 
-<p>CYBER SECURITY DEMO</p>
+<p>CYBER SECURITY DASHBOARD</p>
+
+</div>
 
 </div>
 
-</div>
+<nav>
+
+<a class="active">Home</a>
+
+<a>Features</a>
+
+<a>Dashboard</a>
+
+<a>About</a>
+
+<a>Contact</a>
+
+</nav>
 
 <div class="menu">
 
@@ -51,88 +74,93 @@
 
 </header>
 
-<nav>
-
-<a class="active">
-
-<i class="fa-solid fa-house"></i>
-
-Home
-
-</a>
-
-<a>
-
-<i class="fa-regular fa-star"></i>
-
-Features
-
-</a>
-
-<a>
-
-<i class="fa-solid fa-circle-info"></i>
-
-About
-
-</a>
-
-<a>
-
-<i class="fa-regular fa-envelope"></i>
-
-Contact
-
-</a>
-
-</nav>
+<!-- Hero -->
 
 <section class="hero">
 
-<h2>
+<div class="left-panel">
 
-SNAP<span>SPY</span>
+<div class="panel">
 
-</h2>
+<h3><i class="fa-solid fa-shield"></i> SYSTEM STATUS</h3>
 
-<div class="hero-line"></div>
+<p>✔ Firewall Online</p>
 
-<p>
+<p>✔ AI Protection Active</p>
 
-CYBER DEMONSTRATION
+<p>✔ Secure Connection</p>
 
-</p>
+<div class="progress">
+
+<div class="bar"></div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<h3><i class="fa-solid fa-terminal"></i> LIVE TERMINAL</h3>
+
+<pre id="terminalText"></pre>
+
+</div>
+
+</div>
+
+<div class="center-panel">
+
+<div class="hacker-circle">
+
+<i class="fa-solid fa-user-secret"></i>
+
+</div>
+
+<h1>SNAP<span>SPY</span></h1>
+
+<p>Modern Cyber Security Dashboard Demo</p>
 
 <div class="search-box">
 
-<div class="input">
-
-<i class="fa-solid fa-user"></i>
-
 <input
 type="text"
-placeholder="Enter Username"
-id="username">
-
-</div>
-
-<div class="secure">
-
-<i class="fa-solid fa-lock"></i>
-
-SECURE
-
-</div>
-
-</div>
+id="username"
+placeholder="Enter Username">
 
 <button id="analyze">
 
-<i class="fa-solid fa-crosshairs"></i>
-
-ANALYZE
+Analyze
 
 </button>
+
+</div>
+<div class="right-panel">
+
+<div class="panel">
+
+<h3><i class="fa-solid fa-chart-line"></i> SECURITY SCORE</h3>
+
+<div class="score">98%</div>
+
+<p>All systems running normally.</p>
+
+</div>
+
+<div class="panel">
+
+<h3><i class="fa-solid fa-globe"></i> GLOBAL NETWORK</h3>
+
+<div class="globe">
+
+🌍
+
+</div>
+
+<p>Worldwide Monitoring Demo</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -142,9 +170,9 @@ ANALYZE
 
 <i class="fa-solid fa-shield-halved"></i>
 
-<h3>SECURITY</h3>
+<h3>Cyber Security</h3>
 
-<p>Advanced protection</p>
+<p>Advanced protection with modern dashboard interface.</p>
 
 </div>
 
@@ -152,18 +180,19 @@ ANALYZE
 
 <i class="fa-solid fa-robot"></i>
 
-<h3>AI POWERED</h3>
+<h3>AI Powered</h3>
 
-<p>Smart AI scanning</p>
+<p>AI-assisted demo analysis and intelligent visualizations.</p>
 
 </div>
+
 <div class="card">
 
 <i class="fa-solid fa-bolt"></i>
 
-<h3>FAST SCAN</h3>
+<h3>Fast Performance</h3>
 
-<p>Instant processing</p>
+<p>Optimized animations and responsive interface.</p>
 
 </div>
 
@@ -171,124 +200,40 @@ ANALYZE
 
 <i class="fa-solid fa-lock"></i>
 
-<h3>PRIVACY</h3>
+<h3>Privacy</h3>
 
-<p>Military grade security</p>
-
-</div>
-
-</section>
-
-<section class="status">
-
-<div class="status-head">
-
-<h2>SYSTEM STATUS</h2>
-
-</div>
-
-<div class="status-grid">
-
-<div>
-
-<h3 class="online">
-
-● CONNECTED
-
-</h3>
-
-<p>All systems operational</p>
-
-</div>
-
-<div>
-
-<div class="progress-title">
-
-<span>SCAN PROGRESS</span>
-
-<span id="percent">87%</span>
-
-</div>
-
-<div class="progress">
-
-<div class="bar" id="bar"></div>
-
-</div>
-
-</div>
+<p>Privacy-focused cyber security demonstration.</p>
 
 </div>
 
 </section>
 
-<section class="terminal">
-
-<div class="terminal-top">
-
-<h2>LIVE SYSTEM TERMINAL</h2>
-
-<div class="lights">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-</div>
-
-<div class="terminal-body">
-
-<pre id="terminalText"></pre>
-
-<div class="map-box">
-
-<div class="map">
-
-🌍
-
-</div>
-
-<div class="info">
-
-<h4>LOCATION</h4>
-
-<p>Unknown</p>
-
-<hr>
-
-<h4>IP ADDRESS</h4>
-
-<p>192.168.1.1</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
 <footer>
 
-<div class="footer-icon">
-<i class="fa-solid fa-lock"></i>
-</div>
+<div class="footer-logo">
 
-<div>
+<i class="fa-solid fa-shield-halved"></i>
 
-<h3>SnapSpy Cyber Security Demo Interface</h3>
-
-<p>For Educational & Demonstration Purposes Only</p>
+<h2>SNAP<span>SPY</span></h2>
 
 </div>
+
+<p>
+
+Cyber Security Dashboard Demo • UI Showcase
+
+</p>
+
+<p>
+
+© 2026 SnapSpy Demo
+
+</p>
 
 </footer>
 
 <script src="js/app.js"></script>
 
 </body>
+
 </html>
