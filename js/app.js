@@ -1,109 +1,179 @@
 // ===============================
-// SNAPSPY V6
-// UI DEMO ONLY
+// SNAPSPY V7
+// Cyber Security Dashboard Demo
 // ===============================
 
-// Matrix Background
-const matrix = document.getElementById("matrix");
+// MATRIX EFFECT
+const canvas = document.getElementById("matrix");
 
-if (matrix) {
+if (canvas) {
 
-    for (let i = 0; i < 120; i++) {
+const ctx = canvas.getContext("2d");
 
-        const s = document.createElement("span");
+function resize() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
 
-        s.innerHTML = Math.random() > .5 ? "1" : "0";
+resize();
 
-        s.style.left = Math.random() * 100 + "%";
+window.addEventListener("resize", resize);
 
-        s.style.animationDuration = 4 + Math.random() * 8 + "s";
+const letters =
+"SNAPSPY01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        s.style.animationDelay = Math.random() * 5 + "s";
+const fontSize = 16;
 
-        matrix.appendChild(s);
+let columns = Math.floor(canvas.width / fontSize);
 
-    }
+let drops = Array(columns).fill(1);
+
+function draw() {
+
+ctx.fillStyle = "rgba(0,0,0,0.06)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#ff2020";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text=
+letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(
+text,
+i*fontSize,
+drops[i]*fontSize
+);
+
+if(
+drops[i]*fontSize>canvas.height &&
+Math.random()>0.975
+){
+
+drops[i]=0;
 
 }
 
-// Terminal Typing
+drops[i]++;
 
-const terminal = document.getElementById("terminalText");
+}
 
-const lines = [
+}
 
-"> Initializing SnapSpy Demo...",
-"> Connecting UI Modules...",
-"> Loading AI Components...",
-"> Verifying Dashboard...",
-"> Security Layer Active...",
-"> Demo Ready."
+setInterval(draw,35);
+
+}
+
+// ===============================
+// TERMINAL
+// ===============================
+
+const terminal =
+document.getElementById("terminalText");
+
+if(terminal){
+
+const lines=[
+
+"> Booting SnapSpy V7...",
+
+"> Initializing AI Engine...",
+
+"> Loading Dashboard...",
+
+"> Establishing Secure Session...",
+
+"> Demo Interface Ready.",
 
 ];
 
-let i = 0;
+let l=0;
+let c=0;
 
-function typeLine(){
+function typing(){
 
-if(!terminal) return;
-
-if(i < lines.length){
-
-terminal.innerHTML += lines[i] + "\n";
-
-terminal.scrollTop = terminal.scrollHeight;
-
-i++;
-
-setTimeout(typeLine,700);
-
-}else{
+if(l>=lines.length){
 
 setTimeout(()=>{
 
 terminal.innerHTML="";
+l=0;
+c=0;
+typing();
 
-i=0;
+},2500);
 
-typeLine();
+return;
 
-},3000);
+}
+
+if(c<lines[l].length){
+
+terminal.innerHTML+=lines[l].charAt(c);
+
+c++;
+
+setTimeout(typing,30);
+
+}else{
+
+terminal.innerHTML+="\n";
+
+l++;
+c=0;
+
+setTimeout(typing,250);
 
 }
 
 }
 
-typeLine();
+typing();
 
+}
 
-// Progress Animation
+// ===============================
+// PROGRESS BAR
+// ===============================
 
-const percent = document.getElementById("percent");
+const bar =
+document.querySelector(".bar");
 
-const bar = document.getElementById("bar");
-
-let value = 87;
+let value=70;
 
 setInterval(()=>{
 
 value++;
 
-if(value>99) value=87;
+if(value>95){
 
-if(percent) percent.innerHTML=value+"%";
+value=70;
 
-if(bar) bar.style.width=value+"%";
+}
+
+if(bar){
+
+bar.style.width=value+"%";
+
+}
 
 },180);
 
+// ===============================
+// ANALYZE BUTTON
+// ===============================
 
-// Analyze Button (Demo)
+const btn =
+document.getElementById("analyze");
 
-const btn = document.getElementById("analyze");
+if(btn){
 
-btn?.addEventListener("click",()=>{
+btn.onclick=()=>{
 
-const user=document.getElementById("username");
+const user=
+document.getElementById("username");
 
 if(!user.value.trim()){
 
@@ -114,28 +184,50 @@ return;
 }
 
 alert(
-"Demo Mode\n\nUsername: "
-+ user.value +
-"\n\nThis is a cyber dashboard demonstration."
+"Demo Mode\n\nUser: "
++user.value+
+"\n\nCyber dashboard visualization loaded."
 );
 
-});
+};
 
+}
 
-// Card Hover Glow
+// ===============================
+// CARD HOVER
+// ===============================
 
-document.querySelectorAll(".card").forEach(card=>{
+document.querySelectorAll(".card,.panel")
+.forEach(card=>{
 
-card.addEventListener("mousemove",()=>{
+card.addEventListener("mouseenter",()=>{
 
-card.style.boxShadow="0 0 30px rgba(255,0,0,.45)";
+card.style.transform="translateY(-6px)";
 
 });
 
 card.addEventListener("mouseleave",()=>{
 
-card.style.boxShadow="0 0 15px rgba(255,0,0,.15)";
+card.style.transform="translateY(0px)";
 
 });
+
+});
+
+// ===============================
+// PAGE FADE
+// ===============================
+
+window.addEventListener("load",()=>{
+
+document.body.style.opacity="0";
+
+document.body.style.transition="opacity .8s";
+
+setTimeout(()=>{
+
+document.body.style.opacity="1";
+
+},50);
 
 });
