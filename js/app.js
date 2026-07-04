@@ -1,117 +1,137 @@
-// ===== Loader =====
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  if (loader) {
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 500);
-    }, 1200);
-  }
-});
+// ==========================
+// SNAPSPY V5
+// ==========================
 
-// ===== Typing Terminal =====
+// Matrix Background
+const canvas = document.getElementById("matrix");
+
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+
+  const chars = "01SNAPSPYABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const size = 16;
+  let columns = Math.floor(window.innerWidth / size);
+  let drops = Array(columns).fill(1);
+
+  function draw() {
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#ff2020";
+    ctx.font = size + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+
+      ctx.fillText(text, i * size, drops[i] * size);
+
+      if (drops[i] * size > canvas.height && Math.random() > 0.98) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+}
+
+// ==========================
+// Terminal Typing
+// ==========================
+
 const terminal = document.getElementById("terminal");
 
+if (terminal) {
+
 const lines = [
-  "> Initializing SnapSpy...",
-  "> Loading Cyber UI...",
-  "> Establishing secure session...",
-  "> AI modules ready.",
-  "> Dashboard online."
+
+"> Booting SnapSpy...",
+"> Loading Security Modules...",
+"> Starting AI Engine...",
+"> Encrypting Session...",
+"> Demo Dashboard Ready."
+
 ];
 
-if (terminal) {
-  let line = 0;
-  let char = 0;
+let line = 0;
+let ch = 0;
 
-  function type() {
-    if (line >= lines.length) return;
+function type(){
 
-    if (char < lines[line].length) {
-      terminal.textContent += lines[line].charAt(char);
-      char++;
-      setTimeout(type, 35);
-    } else {
-      terminal.textContent += "\n";
-      line++;
-      char = 0;
-      setTimeout(type, 250);
-    }
-  }
+if(line >= lines.length){
 
-  type();
+setTimeout(()=>{
+
+terminal.innerHTML="";
+
+line=0;
+ch=0;
+
+type();
+
+},2500);
+
+return;
+
 }
 
-// ===== Hero Button =====
+if(ch < lines[line].length){
+
+terminal.innerHTML += lines[line].charAt(ch);
+
+ch++;
+
+setTimeout(type,35);
+
+}else{
+
+terminal.innerHTML+="<br>";
+
+line++;
+
+ch=0;
+
+setTimeout(type,250);
+
+}
+
+}
+
+type();
+
+}
+
+// ==========================
+// Button
+// ==========================
+
 const btn = document.querySelector(".search button");
 
-if (btn) {
-  btn.addEventListener("click", () => {
-    const input = document.querySelector(".search input");
+if(btn){
 
-    if (!input.value.trim()) {
-      alert("Please enter a username.");
-      return;
-    }
+btn.addEventListener("click",()=>{
 
-    localStorage.setItem("snapspy_username", input.value.trim());
+const input=document.querySelector(".search input");
 
-    btn.textContent = "Opening...";
-    btn.disabled = true;
+if(!input.value.trim()){
 
-    setTimeout(() => {
-      window.location.href = "report.html";
-    }, 1000);
-  });
-}
-const canvas=document.getElementById("matrix");
+alert("Please enter a username.");
 
-if(canvas){
-
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-const letters="01SNAPSPY";
-
-const fontSize=16;
-
-const columns=Math.floor(canvas.width/fontSize);
-
-const drops=[];
-
-for(let i=0;i<columns;i++) drops[i]=1;
-
-function draw(){
-
-ctx.fillStyle="rgba(0,0,0,0.06)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="#ff2020";
-ctx.font=fontSize+"px monospace";
-
-for(let i=0;i<drops.length;i++){
-
-const text=letters[Math.floor(Math.random()*letters.length)];
-
-ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
-drops[i]=0;
-}
-
-drops[i]++;
+return;
 
 }
 
-}
+alert("Demo mode: Analysis UI loaded for " + input.value);
 
-setInterval(draw,35);
-
-window.onresize=()=>{
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-};
+});
 
 }
