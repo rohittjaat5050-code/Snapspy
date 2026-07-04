@@ -215,3 +215,479 @@ color:#ff2020;
 text-shadow:0 0 15px red;
 
 }
+/* ====================================
+   HERO SECTION
+==================================== */
+
+.hero{
+
+min-height:90vh;
+
+display:grid;
+
+grid-template-columns:280px 1fr 280px;
+
+gap:30px;
+
+padding:60px 7%;
+
+align-items:center;
+
+}
+
+.hero-left,
+.hero-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.hero-center{
+
+text-align:center;
+
+position:relative;
+
+}
+
+.hero-center h1{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:90px;
+
+font-weight:900;
+
+letter-spacing:5px;
+
+margin-bottom:15px;
+
+text-shadow:0 0 20px red;
+
+}
+
+.hero-center h1 span{
+
+color:#ff2020;
+
+}
+
+.hero-center p{
+
+font-size:22px;
+
+color:#bbb;
+
+margin-bottom:35px;
+
+letter-spacing:2px;
+
+}
+
+.search{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.search input{
+
+width:420px;
+
+max-width:100%;
+
+padding:18px;
+
+background:#111;
+
+border:2px solid rgba(255,0,0,.35);
+
+border-radius:14px;
+
+color:white;
+
+font-size:17px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.search input:focus{
+
+border-color:#ff2020;
+
+box-shadow:0 0 20px rgba(255,0,0,.4);
+
+}
+
+.search button{
+
+padding:18px 35px;
+
+background:#ff2020;
+
+border:none;
+
+border-radius:14px;
+
+color:white;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.search button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 20px red;
+
+}
+
+.badges{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.badges div{
+
+padding:12px 18px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,0,0,.25);
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.badges div:hover{
+
+background:#ff2020;
+
+transform:translateY(-3px);
+
+}
+
+.card{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,0,0,.20);
+
+border-radius:20px;
+
+padding:22px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 0 20px rgba(255,0,0,.10);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+border-color:#ff2020;
+
+box-shadow:
+
+0 0 25px rgba(255,0,0,.4);
+
+}
+
+.progress{
+
+margin-top:15px;
+
+height:8px;
+
+background:#222;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.fill{
+
+height:100%;
+
+width:70%;
+
+background:linear-gradient(90deg,#ff2020,#ff6666);
+
+animation:loading 3s infinite;
+
+}
+
+@keyframes loading{
+
+0%{width:10%;}
+
+50%{width:80%;}
+
+100%{width:100%;}
+
+}
+/* ====================================
+   FEATURES
+==================================== */
+
+.features{
+
+padding:60px 7%;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.features .card{
+
+text-align:center;
+
+}
+
+.features .card i{
+
+font-size:42px;
+
+color:#ff2020;
+
+margin-bottom:15px;
+
+}
+
+.features .card h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+}
+
+.features .card p{
+
+color:#bbb;
+
+line-height:28px;
+
+}
+
+/* TERMINAL */
+
+#terminal{
+
+font-family:monospace;
+
+font-size:14px;
+
+color:#00ff66;
+
+line-height:24px;
+
+min-height:160px;
+
+white-space:pre-wrap;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:60px;
+
+padding:40px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,0,0,.25);
+
+background:#080808;
+
+}
+
+footer h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+footer span{
+
+color:#ff2020;
+
+}
+
+footer p{
+
+color:#888;
+
+margin-top:8px;
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff2020;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+
+flex-direction:column;
+
+gap:18px;
+
+padding:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+grid-template-columns:1fr;
+
+padding:30px 20px;
+
+}
+
+.hero-left{
+
+order:2;
+
+}
+
+.hero-center{
+
+order:1;
+
+}
+
+.hero-right{
+
+order:3;
+
+}
+
+.hero-center h1{
+
+font-size:48px;
+
+}
+
+.hero-center p{
+
+font-size:18px;
+
+}
+
+.search{
+
+flex-direction:column;
+
+}
+
+.search input,
+.search button{
+
+width:100%;
+
+}
+
+.badges{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.logo{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
