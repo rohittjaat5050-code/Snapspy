@@ -350,3 +350,133 @@ transform:translateY(30px);
 }
 
 }
+/* ==========================
+   CYBER DASHBOARD CARDS
+========================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:60px 8%;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,0,0,.20);
+border-radius:20px;
+padding:25px;
+backdrop-filter:blur(20px);
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:-80px;
+right:-80px;
+width:180px;
+height:180px;
+background:rgba(255,0,0,.08);
+border-radius:50%;
+filter:blur(40px);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#ff2020;
+box-shadow:0 0 30px rgba(255,0,0,.35);
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:18px;
+color:#fff;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:26px;
+}
+
+.progress{
+height:8px;
+background:#181818;
+border-radius:50px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#ff2020,#ff6666);
+animation:loadingBar 4s infinite;
+}
+
+@keyframes loadingBar{
+0%{width:0%;}
+50%{width:75%;}
+100%{width:100%;}
+}
+
+/* TERMINAL */
+
+#terminal{
+font-family:monospace;
+font-size:14px;
+color:#00ff66;
+line-height:24px;
+min-height:150px;
+white-space:pre-wrap;
+}
+
+/* FOOTER */
+
+footer{
+padding:35px;
+text-align:center;
+background:#090909;
+border-top:1px solid rgba(255,0,0,.25);
+color:#888;
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero-wrap{
+grid-template-columns:1fr;
+}
+
+.hero-center h1{
+font-size:42px;
+}
+
+.search input{
+width:100%;
+}
+
+.search button{
+width:100%;
+}
+
+.cards{
+grid-template-columns:1fr;
+padding:40px 20px;
+}
+
+}
